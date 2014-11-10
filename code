@@ -1,0 +1,25 @@
+#Richard Wang and Mohammed Z. Makda
+#CS 1301 Section B05
+#rwang329@gatech.edu/mmakda3@gatech.edu
+#We worked on the homework assignment alone, using only this semester's course material
+
+from Myro import *
+init("/dev/tty.Fluke2-0815-Fluke2")
+
+win = Window("",500,500)
+
+
+def handleKeyRelease(win, event):
+    if event.key == "Up":
+        forward(1,.1)
+    if event.key == "Down":
+        backward(1,.1)
+    if event.key == "Left":
+        turnLeft(1,.1)
+    if event.key == "Right":
+        turnRight(1,.1)
+    if event.key == "b":
+        beep(.1,800)
+
+onKeyPress(handleKeyRelease)
+print("Done")
